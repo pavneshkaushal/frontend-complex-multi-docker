@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true pavneshkaushal/frontend-complex-client-test npm run test
 
 after_success:
-  - docker build -t pavneshkaushal/frontend-complex-client ./client .
-  - docker build -t pavneshkaushal/frontend-complex-server ./server .
-  - docker build -t pavneshkaushal/frontend-complex-worker ./worker .
-  - docker build -t pavneshkaushal/frontend-complex-nginx  ./nginx .
+  - docker build -t pavneshkaushal/frontend-complex-client ./client
+  - docker build -t pavneshkaushal/frontend-complex-server ./server
+  - docker build -t pavneshkaushal/frontend-complex-worker ./worker
+  - docker build -t pavneshkaushal/frontend-complex-nginx  ./nginx
   # login to DOCKER CLI
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
   # push images to docker hub
