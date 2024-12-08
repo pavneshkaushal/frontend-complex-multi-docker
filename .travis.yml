@@ -16,14 +16,14 @@ after_success:
   - docker build -t pavneshkaushal/frontend-complex-nginx  ./nginx .
   
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-2"
-  app: "frontend2"
-  env: "Frontend2-env"
-  bucket_name: "elasticbeanstalk-us-east-2-836200856165"
-  bucket_path: "frontend2"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+#deploy:
+#  provider: elasticbeanstalk
+#  region: "us-east-2"
+#  app: "frontend2"
+#  env: "Frontend2-env"
+#  bucket_name: "elasticbeanstalk-us-east-2-836200856165"
+#  bucket_path: "frontend2"
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
