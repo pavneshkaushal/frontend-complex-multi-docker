@@ -21,6 +21,7 @@ after_success:
   - docker push pavneshkaushal/frontend-complex-server
   - docker push pavneshkaushal/frontend-complex-worker
   - docker push pavneshkaushal/frontend-complex-nginx
+
   
 #deploy:
 #  provider: elasticbeanstalk
