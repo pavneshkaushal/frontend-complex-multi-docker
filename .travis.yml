@@ -23,14 +23,15 @@ after_success:
   - docker push panak4572/frontend-complex-nginx
 
   
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "us-east-2"
-#  app: "frontend2"
-#  env: "Frontend2-env"
-#  bucket_name: "elasticbeanstalk-us-east-2-836200856165"
-#  bucket_path: "frontend2"
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "frontend-complex-multi-docker"
+  env: "Frontend-complex-multi-docker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-836200856165"  
+  bucket_path: "frontend-complex-multi-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_ACCESS_KEY

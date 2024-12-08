@@ -1,0 +1,39 @@
+{
+	"AWSEBDockerrunVersion": 2,
+	"containerDefinitions": [
+		{
+			"name": "client",
+			"image": "panak4572/frontend-complex-client",
+			"hostname":"client",
+			"essential": false,
+			"memory": 256
+		},
+		{
+			"name": "server",
+			"image": "panak4572/frontend-complex-server",
+			"hostname":"api",
+			"essential": false,
+			"memory": 256
+		},
+		{
+			"name": "worker",
+			"image": "panak4572/frontend-complex-worker",
+			"hostname":"worker",
+			"essential": false,
+			"memory": 256
+		},
+		{
+			"name": "nginx",
+			"image": "panak4572/frontend-complex-nginx",
+			"hostname":"nginx",
+			"essential": true,
+			"portMappings": [
+			{
+				"hostPort": 80,
+				"containerPort": 80
+			}],
+			"links": ["client","server"],
+			"memory": 256
+		}
+	]
+}
