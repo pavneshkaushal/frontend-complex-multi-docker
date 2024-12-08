@@ -14,8 +14,14 @@ after_success:
   - docker build -t pavneshkaushal/frontend-complex-server ./server .
   - docker build -t pavneshkaushal/frontend-complex-worker ./worker .
   - docker build -t pavneshkaushal/frontend-complex-nginx  ./nginx .
+  # login to DOCKER CLI
+  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+  # push images to docker hub
+  - docker push pavneshkaushal/frontend-complex-client
+  - docker push pavneshkaushal/frontend-complex-server
+  - docker push pavneshkaushal/frontend-complex-worker
+  - docker push pavneshkaushal/frontend-complex-nginx
   
-
 #deploy:
 #  provider: elasticbeanstalk
 #  region: "us-east-2"
